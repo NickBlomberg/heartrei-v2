@@ -30,6 +30,25 @@
       "react/prop-types": "off",
       "react/self-closing-comp": "off",
       "import/no-unresolved": "off",
+
+      // Fix href attribute missing from Next.js link anchor tags
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight"
+          ],
+          "aspects": [
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ],
+
       "prettier/prettier": [
         "error"
       ]
