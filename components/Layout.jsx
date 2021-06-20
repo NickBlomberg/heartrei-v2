@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Navbar from './Navbar'
+import ChakraAlert from './ChakraAlert'
 
 export default function Layout({ title, description, keywords, children }) {
   return (
@@ -11,6 +12,10 @@ export default function Layout({ title, description, keywords, children }) {
         <meta name="keywords" content={keywords} />
       </Head>
       <Navbar />
+      <ChakraAlert
+        title="COVID-19:"
+        description="Therapies are currently suspended until further notice"
+      />
       <div>{children}</div>
     </div>
   )
