@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 
 import '@fontsource/courgette/400.css'
+import '@fontsource/la-belle-aurore/400.css'
 
 import theme from 'theme'
 

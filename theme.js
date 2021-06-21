@@ -10,6 +10,14 @@ const theme = extendTheme({
         },
       },
     },
+    Text: {
+      variants: {
+        signature: {
+          fontFamily: 'La Belle Aurore',
+          fontWeight: '500',
+        },
+      },
+    },
   },
 })
 
