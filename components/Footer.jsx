@@ -13,11 +13,11 @@ import Link from './Link'
 
 export default function Footer() {
   const quickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Therapies', href: '/therapies' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
+    { id: 1, label: 'Home', href: '/' },
+    { id: 2, label: 'About', href: '/about' },
+    { id: 3, label: 'Therapies', href: '/therapies' },
+    { id: 4, label: 'Contact', href: '/contact' },
+    { id: 5, label: 'Blog', href: '/blog' },
   ]
 
   return (
@@ -31,8 +31,8 @@ export default function Footer() {
     >
       <FooterSection heading="Quick Links">
         <List spacing={4}>
-          {quickLinks.map(({ label, href }) => (
-            <ListItem>
+          {quickLinks.map(({ id, label, href }) => (
+            <ListItem key={id}>
               <Link href={href}>{label}</Link>
             </ListItem>
           ))}
