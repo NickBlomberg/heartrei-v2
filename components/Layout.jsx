@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Navbar from './Navbar'
 import ChakraAlert from './ChakraAlert'
+import Footer from './Footer'
 
 export default function Layout({ title, description, keywords, children }) {
   return (
@@ -17,6 +18,7 @@ export default function Layout({ title, description, keywords, children }) {
         description="Therapies are currently suspended until further notice"
       />
       <div>{children}</div>
+      <Footer />
     </div>
   )
 }
