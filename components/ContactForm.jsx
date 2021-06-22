@@ -1,52 +1,59 @@
-import {
-  VStack,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Textarea,
-  Button,
-} from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 
-import { EmailIcon, PhoneIcon } from '@chakra-ui/icons'
+import { Formik, Form } from 'formik'
+import { InputControl, TextareaControl, SubmitButton } from 'formik-chakra-ui'
+
+import * as yup from 'yup'
 
 export default function ContactForm({ ...rest }) {
   return (
-    <VStack spacing={5} {...rest}>
-      <FormControl id="name" isRequired>
-        <FormLabel>Name</FormLabel>
-        <Input placeholder="Name" />
-      </FormControl>
-
-      <FormControl id="email">
-        <FormLabel>Email Address</FormLabel>
-        <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <EmailIcon color="gray.300" />
-          </InputLeftElement>
-          <Input type="email" placeholder="Email" />
-        </InputGroup>
-      </FormControl>
-
-      <FormControl id="phone">
-        <FormLabel>Phone Number</FormLabel>
-        <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <PhoneIcon color="gray.300" />
-          </InputLeftElement>
-          <Input type="phone" placeholder="Phone" />
-        </InputGroup>
-      </FormControl>
-
-      <FormControl id="message" isRequired>
-        <FormLabel>Message</FormLabel>
-        <Textarea placeholder="How can we help you?" />
-      </FormControl>
-
-      <FormControl id="submit">
-        <Button colorScheme="green">Submit</Button>
-      </FormControl>
-    </VStack>
+    <Formik
+      initialValues={{ name: '', email: '', phone: '', message: '' }}
+      validationSchema={yup.object().shape(
+        {
+          name: yup.string().required('Please enter your name'),
+          email: yup
+            .string()
+            .email()
+            .when('phone', {
+              is: (phone) => !phone || phone.length === 0,
+              then: yup
+                .string()
+                .email()
+                .required('Please provide an email address or phone number'),
+              otherwise: yup.string(),
+            }),
+          phone: yup.string().when('email', {
+            is: (email) => !email || email.length === 0,
+            then: yup
+              .string()
+              .required('Please provide a phone number or an email address'),
+            otherwise: yup.string(),
+          }),
+          message: yup.string().required('Please enter a message'),
+        },
+        [['email', 'phone']],
+      )}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          actions.setSubmitting(false)
+        }, 1000)
+      }}
+    >
+      <Form>
+        <VStack spacing={5} {...rest}>
+          <InputControl name="name" label="Name" isRequired />
+          <InputControl name="email" label="Email" />
+          <InputControl name="phone" label="Phone" />
+          <TextareaControl
+            name="message"
+            label="Message"
+            isRequired
+            textareaProps={{ placeholder: 'How can we help you?' }}
+          />
+          <SubmitButton colorScheme="green">Submit</SubmitButton>
+        </VStack>
+      </Form>
+    </Formik>
   )
 }
