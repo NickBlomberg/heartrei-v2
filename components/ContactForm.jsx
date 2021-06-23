@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react'
+import { VStack, useToast } from '@chakra-ui/react'
 
 import { Formik, Form } from 'formik'
 import { InputControl, TextareaControl, SubmitButton } from 'formik-chakra-ui'
@@ -6,6 +6,8 @@ import { InputControl, TextareaControl, SubmitButton } from 'formik-chakra-ui'
 import * as yup from 'yup'
 
 export default function ContactForm({ ...rest }) {
+  const toast = useToast()
+
   const sendEmail = async (data, actions) => {
     try {
       const res = await fetch('/api/contact', {
@@ -17,12 +19,27 @@ export default function ContactForm({ ...rest }) {
       if (res.ok) {
         actions.setSubmitting(false)
         actions.resetForm()
-        console.log('Message sent!!')
+
+        toast({
+          title: 'Message Sent',
+          description: 'Thanks! We will be in touch soon.',
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+        })
+      } else {
+        actions.setSubmitting(false)
+
+        toast({
+          title: 'Oops! There was a problem',
+          description:
+            'Please contact us directly using the email address or phone number below',
+          status: 'error',
+          duration: 4000,
+          isClosable: true,
+        })
       }
-    } catch (error) {
-      actions.setSubmitting(false)
-      console.error(error)
-    }
+    } catch (error) {}
   }
   return (
     <Formik
