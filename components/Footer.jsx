@@ -11,7 +11,7 @@ import {
 import { FaFacebookSquare } from 'react-icons/fa'
 import Link from './Link'
 
-export default function Footer() {
+export default function Footer({ ...rest }) {
   const quickLinks = [
     { id: 1, label: 'Home', href: '/' },
     { id: 2, label: 'About', href: '/about' },
@@ -28,6 +28,8 @@ export default function Footer() {
       width="100vw"
       borderTop="2px"
       borderColor="gray.200"
+      mt="auto"
+      {...rest}
     >
       <FooterSection heading="Quick Links">
         <List spacing={4}>

@@ -1,12 +1,14 @@
 import Head from 'next/head'
 
+import { Flex } from '@chakra-ui/react'
+
 import Navbar from './Navbar'
 import ChakraAlert from './ChakraAlert'
 import Footer from './Footer'
 
 export default function Layout({ title, description, keywords, children }) {
   return (
-    <div>
+    <Flex direction="column" h="100vh" as="main">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -19,7 +21,7 @@ export default function Layout({ title, description, keywords, children }) {
       />
       <div>{children}</div>
       <Footer />
-    </div>
+    </Flex>
   )
 }
 
