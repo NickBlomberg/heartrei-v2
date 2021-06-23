@@ -6,6 +6,24 @@ import { InputControl, TextareaControl, SubmitButton } from 'formik-chakra-ui'
 import * as yup from 'yup'
 
 export default function ContactForm({ ...rest }) {
+  const sendEmail = async (data, actions) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        actions.setSubmitting(false)
+        actions.resetForm()
+        console.log('Message sent!!')
+      }
+    } catch (error) {
+      actions.setSubmitting(false)
+      console.error(error)
+    }
+  }
   return (
     <Formik
       initialValues={{ name: '', email: '', phone: '', message: '' }}
@@ -35,9 +53,10 @@ export default function ContactForm({ ...rest }) {
         [['email', 'phone']],
       )}
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          actions.setSubmitting(false)
-        }, 1000)
+        // setTimeout(() => {
+        //   actions.setSubmitting(false)
+        // }, 1000)
+        sendEmail(values, actions)
       }}
     >
       <Form>
