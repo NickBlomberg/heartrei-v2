@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/courgette": "^4.4.5",
     "@fontsource/la-belle-aurore": "^4.4.5",
+    "@sendgrid/mail": "^7.4.5",
     "formik": "^2.2.9",
     "formik-chakra-ui": "^1.4.7",
     "framer-motion": "^4.1.17",
