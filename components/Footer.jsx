@@ -42,6 +42,12 @@ export default function Footer({ ...rest }) {
         </List>
       </FooterSection>
 
+      <FooterSection heading="Certifications">
+        <Link href="https://www.fht.org.uk/users/blomberg208884" isExternal>
+          <Image src="/images/FHT-logo.jpg" w={125} />
+        </Link>
+      </FooterSection>
+
       <FooterSection heading="Contact">
         <VStack spacing={6}>
           <Link href="mailto:heartrei.therapies@gmail.com">
@@ -52,12 +58,6 @@ export default function Footer({ ...rest }) {
             <Icon as={FaFacebookSquare} w={9} h={9} color="blue.600" />
           </Link>
         </VStack>
-      </FooterSection>
-
-      <FooterSection heading="Certifications">
-        <Link href="https://www.fht.org.uk/users/blomberg208884" isExternal>
-          <Image src="/images/FHT-logo.jpg" w={125} />
-        </Link>
       </FooterSection>
     </SimpleGrid>
   )
