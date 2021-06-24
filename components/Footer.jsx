@@ -31,7 +31,7 @@ export default function Footer({ ...rest }) {
       mt="auto"
       {...rest}
     >
-      <FooterSection heading="Quick Links">
+      <FooterSection heading="Navigation">
         <List spacing={4}>
           {quickLinks.map(({ id, label, href }) => (
             <ListItem key={id}>
