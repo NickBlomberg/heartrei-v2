@@ -22,6 +22,7 @@ export default function Footer({ ...rest }) {
 
   return (
     <SimpleGrid
+      as="footer"
       columns={{ base: 1, md: 3 }}
       p={5}
       bg="gray.100"
