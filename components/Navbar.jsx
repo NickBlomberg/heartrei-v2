@@ -7,6 +7,7 @@ import {
   Heading,
   Link as ChakraLink,
   useDisclosure,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
@@ -20,7 +21,7 @@ export default function Navbar() {
       align="center"
       justify="space-between"
       wrap="wrap"
-      padding={5}
+      padding={3}
       bg="gray.100"
       color="gray.700"
       borderBottom="2px"
@@ -35,7 +36,12 @@ export default function Navbar() {
               height="60px"
               width="60px"
             />
-            <Heading as="h1" size="lg" variant="brand" ml={3}>
+            <Heading
+              as="h1"
+              size={useBreakpointValue({ base: 'md', md: 'lg' })}
+              variant="brand"
+              ml={3}
+            >
               HeartRei Therapies
             </Heading>
           </Flex>
@@ -50,7 +56,7 @@ export default function Navbar() {
         direction={{ base: 'column', md: 'row' }}
         display={{ base: isOpen ? 'block' : 'none', md: 'flex' }}
         width={{ base: 'full', md: 'auto' }}
-        spacing={{ base: 10, md: 9 }}
+        spacing={{ base: 10, md: 7 }}
         mt={{ base: 8, md: 0 }}
         mr={{ base: 0, md: 5 }}
       >
