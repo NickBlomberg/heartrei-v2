@@ -88,7 +88,7 @@ export default function Footer({ ...rest }) {
 
 const FooterSection = ({ children, heading }) => (
   <Flex direction="column" align="center" mb={10}>
-    <Heading as="h4" size="md" mb={7}>
+    <Heading as="h3" size="md" mb={7}>
       {heading}
     </Heading>
     {children}
