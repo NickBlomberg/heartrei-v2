@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { Box, Center, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Heading, Text, Image } from '@chakra-ui/react'
 
 import profilePhoto from '../public/images/profile-photo.jpg'
 
@@ -34,7 +33,12 @@ export default function ProfileCard() {
             Helen
           </Text>
         </Box>
-        <Image src={profilePhoto} alt="A potrait of Helen" placeholder="blur" />
+        <Image
+          src="/images/profile-photo.jpg"
+          alt="A potrait of Helen"
+          htmlWidth="308px"
+          htmlHeight="399px"
+        />
       </Flex>
     </Center>
   )
