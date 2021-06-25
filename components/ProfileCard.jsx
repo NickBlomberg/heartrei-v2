@@ -18,7 +18,7 @@ export default function ProfileCard() {
         m={8}
       >
         <Box pr={4}>
-          <Heading as="h3" size="lg" mb={4}>
+          <Heading as="h2" size="lg" mb={4}>
             About Helen
           </Heading>
           <Text mb={4}>
