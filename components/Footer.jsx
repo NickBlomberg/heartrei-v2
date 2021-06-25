@@ -47,8 +47,16 @@ export default function Footer({ ...rest }) {
       </FooterSection>
 
       <FooterSection heading="Certifications">
-        <Link href="https://www.fht.org.uk/users/blomberg208884" isExternal>
-          <Image src="/images/FHT-logo.jpg" w={125} />
+        <Link
+          href="https://www.fht.org.uk/users/blomberg208884"
+          isExternal
+          aria-label="FHT Certification"
+        >
+          <Image
+            src="/images/FHT-logo.jpg"
+            w={125}
+            alt="FHT certification logo"
+          />
         </Link>
       </FooterSection>
 
@@ -65,7 +73,11 @@ export default function Footer({ ...rest }) {
             <PhoneIcon mx={2} color="gray.300" />
             07927 070 285
           </Link>
-          <Link href="https://facebook.com/HeartReiTherapies/" isExternal>
+          <Link
+            href="https://facebook.com/HeartReiTherapies/"
+            isExternal
+            aria-label="Facebook"
+          >
             <Icon as={FaFacebookSquare} w={9} h={9} color="blue.600" />
           </Link>
         </VStack>
