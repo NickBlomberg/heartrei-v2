@@ -53,8 +53,9 @@ export default function Footer({ ...rest }) {
           aria-label="FHT Certification"
         >
           <Image
-            src="/images/FHT-logo.jpg"
+            src="/images/FHT-logo.png"
             w={125}
+            h={57}
             alt="FHT certification logo"
           />
         </Link>
