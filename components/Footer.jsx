@@ -54,8 +54,8 @@ export default function Footer({ ...rest }) {
         >
           <Image
             src="/images/FHT-logo.png"
-            w={125}
-            h={57}
+            htmlWidth="125px"
+            htmlHeight="57px"
             alt="FHT certification logo"
           />
         </Link>
