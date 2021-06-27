@@ -28,24 +28,22 @@ export default function Navbar() {
       borderColor="gray.200"
     >
       <Link href="/">
-        <a>
-          <Flex align="center">
-            <Image
-              src="/images/heartrei-logo.png"
-              alt="HeartRei Therapies Logo"
-              height="60px"
-              width="60px"
-            />
-            <Heading
-              as="h1"
-              size={useBreakpointValue({ base: 'md', md: 'lg' })}
-              variant="brand"
-              ml={3}
-            >
-              HeartRei Therapies
-            </Heading>
-          </Flex>
-        </a>
+        <Flex align="center">
+          <Image
+            src="/images/heartrei-logo.png"
+            alt="HeartRei Therapies Logo"
+            height="60px"
+            width="60px"
+          />
+          <Heading
+            as="h1"
+            size={useBreakpointValue({ base: 'md', md: 'lg' })}
+            variant="brand"
+            ml={3}
+          >
+            HeartRei Therapies
+          </Heading>
+        </Flex>
       </Link>
 
       <Box display={{ base: 'block', md: 'none' }} onClick={handleToggle}>
