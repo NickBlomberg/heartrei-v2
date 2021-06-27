@@ -3,7 +3,7 @@ import ContentfulApi from '@/contentful/Api'
 export default class ContentfulTherapy extends ContentfulApi {
   static async getAll() {
     const query = `{
-      therapyCollection {
+      therapyCollection(where: {enabled: true}) {
         total
         items {
           sys {
