@@ -46,4 +46,46 @@ export default class ContentfulBlogPost extends ContentfulApi {
 
     return paginatedPostSummaries
   }
+
+  static async getAllSlugs() {
+    const query = `{
+      blogPostCollection {
+        items {
+          slug
+        }
+      }
+    }`
+
+    const response = await this.callContentful(query)
+
+    const slugs = response.data.blogPostCollection.items
+      ? response.data.blogPostCollection.items.map((item) => item.slug)
+      : []
+
+    return slugs
+  }
+
+  static async getBySlug(slug) {
+    const query = `{
+      blogPostCollection(limit: 1,  where: {slug: "${slug}"}) {
+        items {
+          sys {
+            id
+          }
+          title
+          slug
+          date
+          content
+        }
+      }
+    }`
+
+    const response = await this.callContentful(query)
+
+    const post = response.data.blogPostCollection.items
+      ? response.data.blogPostCollection.items
+      : []
+
+    return post.pop()
+  }
 }
