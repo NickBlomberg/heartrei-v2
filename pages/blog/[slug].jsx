@@ -3,6 +3,7 @@ import { Box, Container, Flex, Heading, Text, Button } from '@chakra-ui/react'
 import { CalendarIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import Layout from '@/components/Layout'
 import ContentfulBlogPost from '@/contentful/BlogPost'
+import ProfileCard from '@/components/ProfileCard'
 
 export default function Post({ post }) {
   return (
@@ -27,6 +28,8 @@ export default function Post({ post }) {
           <Text fontSize="xl">{post.content}</Text>
           <BackButton mt={8} />
         </Box>
+
+        <ProfileCard />
       </Container>
     </Layout>
   )
