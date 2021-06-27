@@ -7,12 +7,13 @@ export default function ContactPage() {
   return (
     <Layout>
       <Container my={8}>
-        <Heading as="h2" size="lg">
+        <Heading as="h2" size="lg" mb={5}>
           Contact
         </Heading>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In fugit
-          facilis, non alias atque possimus.
+        <Text fontSize="lg">
+          Are you interested in receiving one of our treatments? You can use
+          this for to get in touch! Alternatively, you can reach us by phone,
+          email and Facebook (details at the bottom of the page)
         </Text>
         <ContactForm mt={8} />
       </Container>
