@@ -1,15 +1,15 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import {
   Box,
   Flex,
   Stack,
   Heading,
-  Link as ChakraLink,
   useDisclosure,
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+
+import Link from './Link'
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -60,18 +60,12 @@ export default function Navbar() {
         mt={{ base: 8, md: 0 }}
         mr={{ base: 0, md: 5 }}
       >
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/therapies">Therapies</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/therapies">Therapies</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/blog">Blog</Link>
       </Stack>
     </Flex>
   )
 }
-
-const NavLink = ({ children, to }) => (
-  <Link href={to} passHref>
-    <ChakraLink display="block">{children}</ChakraLink>
-  </Link>
-)
