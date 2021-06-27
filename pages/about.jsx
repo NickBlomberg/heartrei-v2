@@ -7,7 +7,7 @@ import Layout from '@/components/Layout'
 export default function AboutPage() {
   return (
     <Layout>
-      <Container my={8} maxW="container.md">
+      <Container my={8} maxW="container.lg">
         <Heading as="h2" size="lg" mb={5}>
           About
         </Heading>
