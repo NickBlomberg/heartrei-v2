@@ -10,8 +10,6 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 
-import { PhoneIcon, EmailIcon } from '@chakra-ui/icons'
-
 import { FaFacebookSquare } from 'react-icons/fa'
 import Link from './Link'
 
@@ -67,13 +65,9 @@ export default function Footer({ ...rest }) {
           align={useBreakpointValue({ base: 'center', md: 'end' })}
         >
           <Link href="mailto:heartrei.therapies@gmail.com">
-            <EmailIcon mx={2} color="gray.300" />
             heartrei.therapies@gmail.com
           </Link>
-          <Link href="tel:07927070285">
-            <PhoneIcon mx={2} color="gray.300" />
-            07927 070 285
-          </Link>
+          <Link href="tel:07927070285">07927 070 285</Link>
           <Link
             href="https://facebook.com/HeartReiTherapies/"
             isExternal
