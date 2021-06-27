@@ -8,7 +8,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 
-import { ChatIcon } from '@chakra-ui/icons'
+import { ChatIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 export default function Showcase() {
   return (
@@ -36,10 +36,12 @@ export default function Showcase() {
 
           <Stack direction={{ base: 'column', md: 'row' }} spacing={5}>
             <Link href="/therapies" passHref>
-              <Button colorScheme="green">View Therapies</Button>
+              <Button colorScheme="green" rightIcon={<ArrowForwardIcon />}>
+                View Therapies
+              </Button>
             </Link>
             <Link href="/contact" passHref>
-              <Button colorScheme="gray" leftIcon={<ChatIcon />}>
+              <Button colorScheme="gray" rightIcon={<ChatIcon />}>
                 Contact
               </Button>
             </Link>
