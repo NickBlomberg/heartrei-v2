@@ -19,7 +19,7 @@ export default function Layout({ title, description, keywords, children }) {
         title="COVID-19:"
         description="Therapies are currently suspended until further notice"
       />
-      <div>{children}</div>
+      {children}
       <Footer />
     </Flex>
   )
