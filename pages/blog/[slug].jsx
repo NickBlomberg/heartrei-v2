@@ -7,7 +7,7 @@ import ProfileCard from '@/components/ProfileCard'
 
 export default function Post({ post }) {
   return (
-    <Layout>
+    <Layout title={`HeartRei Therapies | ${post.title}`}>
       <Container my={8} maxW="container.lg">
         <Heading as="h2" size="lg" mb={5}>
           {post.title}

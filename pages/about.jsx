@@ -6,7 +6,7 @@ import Layout from '@/components/Layout'
 
 export default function AboutPage() {
   return (
-    <Layout>
+    <Layout title="HeartRei Therapies | About">
       <Container my={8} maxW="container.lg">
         <Heading as="h2" size="lg" mb={5}>
           About

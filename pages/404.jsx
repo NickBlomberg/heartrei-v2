@@ -5,7 +5,7 @@ import Layout from '@/components/Layout'
 export default function PageNotFound() {
   const router = useRouter()
   return (
-    <Layout>
+    <Layout title="HeartRei Therapies | Page not found">
       <Flex
         direction="column"
         alignItems="center"

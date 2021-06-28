@@ -6,7 +6,7 @@ import { Config } from 'utils/Config'
 
 export default function BlogPage({ postSummaries, totalPages, currentPage }) {
   return (
-    <Layout>
+    <Layout title="HeartRei Therapies | Blog">
       <Container my={8} maxW="container.lg">
         <Heading as="h2" size="lg" mb={5}>
           Blog

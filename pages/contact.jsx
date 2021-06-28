@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage() {
   return (
-    <Layout>
+    <Layout title="HeartRei Therapies | Contact">
       <Container my={8}>
         <Heading as="h2" size="lg" mb={5}>
           Contact

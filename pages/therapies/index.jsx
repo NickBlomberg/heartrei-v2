@@ -7,7 +7,7 @@ import ContentfulTherapy from '@/contentful/Therapy'
 
 export default function TherapiesPage({ therapies }) {
   return (
-    <Layout>
+    <Layout title="HeartRei Therapies | Therapies">
       <Container my={8} maxW="container.lg">
         <Heading as="h2" size="lg" mb={5}>
           Therapies
