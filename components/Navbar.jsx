@@ -52,7 +52,7 @@ export default function Navbar() {
 
       <Stack
         direction={{ base: 'column', md: 'row' }}
-        display={{ base: isOpen ? 'block' : 'none', md: 'flex' }}
+        display={{ base: isOpen ? 'flex' : 'none', md: 'flex' }}
         width={{ base: 'full', md: 'auto' }}
         spacing={{ base: 10, md: 7 }}
         mt={{ base: 8, md: 0 }}
