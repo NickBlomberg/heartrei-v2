@@ -1,6 +1,5 @@
 import { Box, Center, Flex, Heading, Text, Image } from '@chakra-ui/react'
 import Link from './Link'
-import profilePhoto from '../public/images/profile-photo.jpg'
 
 export default function ProfileCard() {
   return (
