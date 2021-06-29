@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router'
 import { Box, Container, Flex, Heading, Text, Button } from '@chakra-ui/react'
 import { CalendarIcon, ArrowBackIcon } from '@chakra-ui/icons'
+import ReactMarkdown from 'react-markdown'
+import ReactMarkdownRenderers from '@/utils/ReactMarkdownRenderers'
+import gfm from 'remark-gfm'
 import Layout from '@/components/Layout'
 import ContentfulBlogPost from '@/contentful/BlogPost'
 import ProfileCard from '@/components/ProfileCard'
@@ -25,7 +28,13 @@ export default function Post({ post }) {
             </Text>
           </Flex>
 
-          <Text fontSize="xl">{post.content}</Text>
+          <ReactMarkdown
+            components={ReactMarkdownRenderers(post.content)}
+            remarkPlugins={[gfm]}
+          >
+            {post.content}
+          </ReactMarkdown>
+
           <BackButton mt={8} />
         </Box>
 
