@@ -1,7 +1,9 @@
 import { Container, Heading, Text } from '@chakra-ui/react'
-
 import Layout from '@/components/Layout'
 import ContentfulTherapy from '@/contentful/Therapy'
+import ReactMarkdown from 'react-markdown'
+import ReactMarkdownRenderers from '@/utils/ReactMarkdownRenderers'
+import gfm from 'remark-gfm'
 
 export default function Therapy({ therapy }) {
   return (
@@ -10,7 +12,13 @@ export default function Therapy({ therapy }) {
         <Heading as="h2" size="lg" mb={5}>
           {therapy.title}
         </Heading>
-        <Text>{therapy.description}</Text>
+
+        <ReactMarkdown
+          components={ReactMarkdownRenderers(therapy.description)}
+          remarkPlugins={[gfm]}
+        >
+          {therapy.description}
+        </ReactMarkdown>
       </Container>
     </Layout>
   )
