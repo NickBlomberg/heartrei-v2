@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Heading, Text, Image } from '@chakra-ui/react'
-
+import Link from './Link'
 import profilePhoto from '../public/images/profile-photo.jpg'
 
 export default function ProfileCard() {
@@ -21,13 +21,19 @@ export default function ProfileCard() {
             About Helen
           </Heading>
           <Text mb={4}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            numquam vero id veniam error fugit dicta suscipit facere, minus
-            laborum soluta? Cum, dolore itaque quisquam et tenetur eos id ipsa
-            nesciunt, accusantium, illo molestias inventore ad exercitationem
-            earum neque maiores officiis esse architecto! Veniam fugit eius
-            consectetur? Corporis voluptatem sint voluptates deleniti fugiat
-            ipsam soluta possimus asperiores! Nobis, deleniti animi.
+            My name is Helen Blomberg, I live in Llanelli and have been
+            practicing as a qualified Reiki Practitioner for a number of years.
+            I currently offer Usui Reiki for adults under my own service,
+            HeartRei Therapies. My background is in health care and counselling,
+            having previously been employed by the NHS and{' '}
+            <Link href="https://www.mariecurie.org.uk/" isExternal>
+              Marie Curie.
+            </Link>{' '}
+            I am a member of the{' '}
+            <Link href="https://www.fht.org.uk/users/blomberg208884" isExternal>
+              Federation of Holistic Therapists
+            </Link>
+            , and abide by their ethical framework.
           </Text>
           <Text variant="signature" fontSize="3xl">
             Helen
