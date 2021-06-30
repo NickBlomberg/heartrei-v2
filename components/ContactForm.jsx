@@ -70,9 +70,6 @@ export default function ContactForm({ ...rest }) {
         [['email', 'phone']],
       )}
       onSubmit={(values, actions) => {
-        // setTimeout(() => {
-        //   actions.setSubmitting(false)
-        // }, 1000)
         sendEmail(values, actions)
       }}
     >
