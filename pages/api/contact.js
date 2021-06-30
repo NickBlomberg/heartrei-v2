@@ -2,12 +2,21 @@ import sgMail from '@sendgrid/mail'
 
 export default async (req, res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+  const { name, email, phone, message } = req.body
+
   const msg = {
     to: 'heartrei.therapies@gmail.com',
-    from: 'heartrei.therapies@gmail.com',
-    subject: 'New contact form submission',
-    name: 'HeartRei Therapies',
-    text: JSON.stringify(req.body),
+    from: 'no-reply@heartrei.co.uk',
+    templateId: process.env.SENDGRID_TEMPLATE_ID,
+    substitutionWrappers: ['{{', '}}'],
+    dynamic_template_data: {
+      subject: `New message from ${name}`,
+      name,
+      email,
+      phone,
+      message,
+    },
   }
 
   try {
