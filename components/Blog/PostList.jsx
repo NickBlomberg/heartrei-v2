@@ -1,5 +1,6 @@
 import { SimpleGrid, Flex, Heading, Text, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import formatDate from '@/utils/Date'
 import Link from '../Link'
 import Pagination from './Pagination'
 
@@ -26,14 +27,7 @@ export default function BlogPostList({ posts, currentPage, totalPages }) {
                 {post.title}
               </Heading>
             </Link>
-            <Text pb={8}>
-              Posted on{' '}
-              {new Date(post.date).toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </Text>
+            <Text pb={8}>Posted on {formatDate(post.date)}</Text>
             <Text flexGrow="1" pb={5}>
               {post.excerpt}
             </Text>

@@ -7,6 +7,7 @@ import gfm from 'remark-gfm'
 import Layout from '@/components/Layout'
 import ContentfulBlogPost from '@/contentful/BlogPost'
 import ProfileCard from '@/components/ProfileCard'
+import formatDate from '@/utils/Date'
 
 export default function Post({ post }) {
   return (
@@ -19,13 +20,7 @@ export default function Post({ post }) {
           <BackButton mb={8} />
           <Flex direction="row" align="center" mb={2}>
             <CalendarIcon color="gray.400" mr={2} />
-            <Text>
-              {new Date(post.date).toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </Text>
+            <Text>{formatDate(post.date)}</Text>
           </Flex>
 
           <ReactMarkdown
