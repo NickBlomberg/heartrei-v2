@@ -1,6 +1,4 @@
-import Image from 'next/image'
-
-import { Box, Container, VStack, Heading, Text } from '@chakra-ui/react'
+import { Container, VStack, Heading, Text } from '@chakra-ui/react'
 
 import Layout from '@/components/Layout'
 
