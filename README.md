@@ -1,34 +1,24 @@
+# `HeartRei Therapies v2`
+
+A new and improved website to replace the existing static version of the HeartRei Therapies website.
+
+## Objectives
+
+- Create a dynamic website, where content can be pulled from an external source such as a headless CMS
+- Improve the consistency and responsiveness by using a CSS library
+
+## What I Learned
+
+- Improved knowledge of [Next.js](https://nextjs.org/), this is my first project after finishing a course.
+- Introduced the [Chakra UI](https://chakra-ui.com/) component CSS library to my skill set.
+- How to handle React forms using [Formik](https://formik.org/), with validation using yup.
+
+## Future plans
+
+- Add active link highlighting to the main navigation.
+- Add animations.
+- Extract additional content to Contentful. Particularly the about page, so that this can be updated independent of the code base.
+- Currently, the next/image component does not work well with the Chakra Image component. Image optimization has been carried out manually.
+- Implement a Captcha solution for the contact form.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
